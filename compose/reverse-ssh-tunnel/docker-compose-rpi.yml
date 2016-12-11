@@ -15,7 +15,7 @@ services:
      - ROOT_PASS=${VERY_SECURE_PASSWORD}
   reversesshdestination:
     image: raoulshih/rpi-reverse-ssh-tunnel:0.0.1
-    net: "host"
+    network_mode: "host"
     environment:
      - ROOT_PASS=test123
      - PUBLIC_HOST_ADDR=${DOCKER_FQDN}
@@ -39,7 +39,7 @@ services:
       - DESTINATION_PORT=${DESTINATION_PORT}
   reversesshdestinationvnc:
     image: raoulshih/rpi-reverse-ssh-tunnel:0.0.1
-    net: "host"
+    network_mode: "host"
     environment:
      - ROOT_PASS=test123
      - PUBLIC_HOST_ADDR=${DOCKER_FQDN}
@@ -50,7 +50,7 @@ services:
      - DESTINATION_PORT=5900
   reversesshdestinationweb:
     image: raoulshih/rpi-reverse-ssh-tunnel:0.0.1
-    net: "host"
+    network_mode: "host"
     environment:
       - ROOT_PASS=test123
       - PUBLIC_USER=root
@@ -70,6 +70,6 @@ services:
      # The port on the public machine that will be forwarded to the destination
      # port on the local side
      - PROXY_PORT=1080
-environment:
-  - "PUBLIC_HOST_PORT=2200"
-  - "DESTINATION_PORT=22"
+#environment:
+#  - "PUBLIC_HOST_PORT=2200"
+#  - "DESTINATION_PORT=22"
