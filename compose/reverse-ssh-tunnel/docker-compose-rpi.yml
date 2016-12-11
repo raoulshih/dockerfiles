@@ -1,7 +1,4 @@
 version: "2"
-environment:
-  - "PUBLIC_HOST_PORT=2200"
-  - "DESTINATION_PORT=22"
 services:
   reversesshpublic:
     image: raoulshih/rpi-reverse-ssh-tunnel:0.0.1
@@ -73,3 +70,6 @@ services:
      # The port on the public machine that will be forwarded to the destination
      # port on the local side
      - PROXY_PORT=1080
+environment:
+  - "PUBLIC_HOST_PORT=2200"
+  - "DESTINATION_PORT=22"
